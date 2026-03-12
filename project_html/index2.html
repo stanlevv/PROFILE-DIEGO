@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Profil</title>
+</head>
+<body>
+    <header>
+        <img src="images/pria.png" alt="Logo WebQ" height="150" width="150">
+        <h1>Rohan pm eler</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#pengalaman">Pendidikan dan Pekerjaan</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+    
+    <article id="profil">
+        <h4 style="color: blue;">Profil Saya</h4>
+        <p>Hai, Nama saya Vokasioner</p>
+        <p>Saya adalah seorang profesional dengan pengalaman di bidang TI.</p>
+        <p>Saya memiliki berbagai keterampilan baik soft skill maupun hard skill yang mendukung karir saya.</p>
+    </article>
+    
+    <section id="pengalaman">
+        <h2>Pengalaman Pendidikan</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th rowspan="2">Tahun</th>
+                    <th colspan="2">Pendidikan</th>
+                </tr>
+                <tr>
+                    <th>Jurusan</th>
+                    <th>Universitas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015-2019</td>
+                    <td>S1 Teknik Informatika</td>
+                    <td>Universitas Brawijaya</td>
+                </tr>
+                <tr>
+                    <td>2019-2023</td>
+                    <td>S2 Sistem Informasi</td>
+                    <td>Universitas Brawijaya</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Pengalaman Pekerjaan</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Tahun</th>
+                    <th>Posisi</th>
+                    <th>Perusahaan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2019-2021</td>
+                    <td>Junior Web Developer</td>
+                    <td>XYZ Corp</td>
+                </tr>
+                <tr>
+                    <td>2021-2023</td>
+                    <td>Senior Web Developer</td>
+                    <td>ABC Ltd.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="kontak">
+        <h2>Kontak Kami</h2>
+        <form action="#" method="POST">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="topik">Topik:</label>
+            <select id="topik" name="topik">
+                <option value="pesan">Pesan</option>
+                <option value="saran">Saran</option>
+            </select><br><br>
+            
+            <label for="message">Pesan:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            
+            <input type="submit" value="Kirim">
+        </form>
+    </section>
+    
+    <aside>
+        <h3>Soft Skills</h3>
+        <ol>
+            <li>Komunikasi</li>
+            <li>Kepemimpinan</li>
+            <li>Manajemen Waktu</li>
+            <li>Kerja Tim</li>
+        </ol>
+        
+        <h3>Hard Skills</h3>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>PHP, Python</li>
+            <li>SQL, NoSQL</li>
+            <li>Framework Laravel, Django</li>
+        </ul>
+    </aside>
+    
+    <footer>
+        <p>&copy; 2025 WebQ. Semua hak cipta dilindungi.</p>
+    </footer>
+</body>
+</html>

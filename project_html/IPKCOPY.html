@@ -1,0 +1,59 @@
+<script>
+    function hitungNilai() {
+        // Ambil nilai dari input
+        let nama = document.getElementById('nama').value;
+        let tugas = parseFloat(document.getElementById('tugas').value);
+        let uts = parseFloat(document.getElementById('uts').value);
+        let uas = parseFloat(document.getElementById('uas').value);
+        let kehadiran = parseInt(document.getElementById('kehadiran').value);
+
+        // Validasi: Cek jika input kosong atau di luar range
+        if (nama === '' || isNaN(tugas) || isNaN(uts) || isNaN(uas) || isNaN(kehadiran)) {
+            alert('Isi semua field dengan benar!');
+            return;
+        }
+        if (tugas < 0 || tugas > 100 || uts < 0 || uts > 100 || uas < 0 || uas > 100) {
+            alert('Nilai tugas, UTS, UAS harus 0-100!');
+            return;
+        }
+        if (kehadiran < 0 || kehadiran > 14) {
+            alert('Kehadiran harus 0-14!');
+            return;
+        }
+
+        // Hitung nilai kehadiran dengan perulangan
+        let totalHadir = 0;
+        for (let i = 0; i < kehadiran; i++) {
+            totalHadir += 10;  // Setiap hadir +10
+        }
+        let nilaiHadir = (totalHadir / 140) * 100;  // Max 14*10=140
+
+        // Hitung nilai akhir: 30% tugas + 30% UTS + 30% UAS + 10% kehadiran
+        let nilaiAkhir = (0.3 * tugas) + (0.3 * uts) + (0.3 * uas) + (0.1 * nilaiHadir);
+
+        // Tentukan grade
+        let grade;
+        if (nilaiAkhir >= 85) {
+            grade = 'A';
+        } else if (nilaiAkhir >= 75) {
+            grade = 'B';
+        } else if (nilaiAkhir >= 65) {
+            grade = 'C';
+        } else if (nilaiAkhir >= 50) {
+            grade = 'D';
+        } else {
+            grade = 'E';
+        }
+
+        // Tentukan keterangan lulus/tidak
+        let keterangan = (grade === 'A' || grade === 'B' || grade === 'C') ? 'LULUS' : 'TIDAK LULUS';
+
+        // Tampilkan hasil di div output
+        document.getElementById('output').innerHTML = `
+            Nama: ${nama}<br>
+            Nilai Akhir: ${nilaiAkhir.toFixed(2)}<br>
+            Grade: ${grade}<br>
+            Keterangan: ${keterangan}
+        `;
+    }
+</script>

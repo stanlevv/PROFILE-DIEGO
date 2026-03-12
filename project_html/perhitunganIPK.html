@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Nilai Mahasiswa</title>
+</head>
+<body>
+    <h2>Input Nilai Mahasiswa</h2>
+
+    <label for="nama">Nama</label>
+    <input type="text" id="nama" name="nama">
+    <br>
+    <label for="NT">Nilai Tugas</label>
+    <input type="text" id="NT" name="NT">
+    <br>
+    <label for="UTS">Nilai UTS</label>
+    <input type="text" id="UTS" name="UTS">
+    <br>
+    <label for="UAS">Nilai UAS</label>
+    <input type="text" id="UAS" name="UAS">
+    <br>
+    <label for="semester">Kehadiran (maks 14):</label>
+    <input type="text" id="semester" name="semester">
+    <br>
+    <button onclick="hitungNilai()">Nilai</button>
+    <br>
+    <h3>Hasil</h3>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungNilai() {
+            let nama = document.getElementById("nama").value;
+            let NT = document.getElementById("NT").value;
+            let UTS = document.getElementById("UTS").value;
+            let UAS = document.getElementById("UAS").value;
+            let semester = document.getElementById("semester").value;
+            let hasil = (NT * 0.2) + (UTS * 0.3) + (UAS * 0.5);
+            document.getElementById("hasil").innerHTML = "Nama: " + nama + "<br>Nilai Tugas: " + NT + "<br>Nilai UTS: " + UTS + "<br>Nilai UAS: " + UAS + "<br>Kehadiran: " + semester + "<br>Nilai Akhir: " + hasil;
+        }
+    </script>
+</body>
+</html>
